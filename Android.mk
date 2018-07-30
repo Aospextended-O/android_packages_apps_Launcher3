@@ -40,6 +40,7 @@ LOCAL_SRC_FILES := \
 
 LOCAL_RESOURCE_DIR := \
     $(LOCAL_PATH)/res \
+    $(LOCAL_PATH)/inline-res \
     prebuilts/sdk/current/support/v7/recyclerview/res \
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
@@ -89,6 +90,7 @@ LOCAL_SRC_FILES := \
 LOCAL_RESOURCE_DIR := \
     $(LOCAL_PATH)/go/res \
     $(LOCAL_PATH)/res \
+    $(LOCAL_PATH)/inline-res \
     prebuilts/sdk/current/support/v7/recyclerview/res \
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
@@ -115,6 +117,28 @@ LOCAL_FULL_LIBS_MANIFEST_FILES := \
 LOCAL_MANIFEST_FILE := go/AndroidManifest.xml
 
 LOCAL_JACK_COVERAGE_INCLUDE_FILTER := com.android.launcher3.*
+
+include $(BUILD_PACKAGE)
+
+#
+#Build Lean Companion app
+#
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_TAGS := optional
+
+LOCAL_SRC_FILES := \
+    $(call all-java-files-under, companion/smartspace/src/main/java)
+
+LOCAL_RESOURCE_DIR := \
+    $(LOCAL_PATH)/companion/smartspace/src/main/res
+
+LOCAL_SDK_VERSION := current
+LOCAL_MIN_SDK_VERSION := 21
+LOCAL_PACKAGE_NAME := LeanCompanion
+LOCAL_PRIVILEGED_MODULE := true
+
+LOCAL_MANIFEST_FILE := companion/smartspace/src/main/AndroidManifest.xml
 
 include $(BUILD_PACKAGE)
 
