@@ -176,15 +176,6 @@
                     android:scheme="content"/>
             </intent-filter>
         </activity>
-        <receiver
-            android:name="com.google.android.apps.nexuslauncher.LeanProxyReceiver"
-            android:permission="com.google.android.apps.nexuslauncher.COMPANION">
-            <intent-filter>
-                <action android:name="com.google.android.apps.nexuslauncher.AT_A_GLANCE" />
-                <action android:name="com.google.android.apps.nexuslauncher.HIDE_AT_A_GLANCE_COMPANION" />
-                <action android:name="com.google.android.apps.nexuslauncher.OPEN_LEAN_SETTINGS" />
-            </intent-filter>
-        </receiver>
         <receiver android:name="com.google.android.apps.nexuslauncher.qsb.OPAStatusReceiver" android:permission="android.permission.CAPTURE_AUDIO_HOTWORD">
             <intent-filter>
                 <action android:name="com.google.android.systemui.OPA_ENABLED" />
@@ -261,11 +252,4 @@
         -->
 
     </application>
-
-    <permission android:name="com.google.android.apps.nexuslauncher.COMPANION"
-        android:protectionLevel="signature"
-        android:label="@string/companion_app_permission_label"
-        android:description="@string/companion_app_permission_description">
-    </permission>
-
 </manifest>
