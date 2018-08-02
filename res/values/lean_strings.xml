@@ -321,4 +321,8 @@
     <string name="show_page_indicator_title">Show page indicator</string>
     <string name="show_page_indicator_summary">Using horizontal lines</string>
 
+    <!-- Show icon count on badge -->
+    <string name="show_badge_count_title">Show count on badge</string>
+    <string name="show_badge_count_summary">Adds a notification counter on the notification badge </string>
+
 </resources>

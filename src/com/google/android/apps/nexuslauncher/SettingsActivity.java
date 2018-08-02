@@ -129,6 +129,7 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
             findPreference(LeanSettings.GENERATED_ADAPTIVE_BACKGROUND).setOnPreferenceChangeListener(this);
             findPreference(LeanSettings.ALLOW_TWO_LINE_LABELS).setOnPreferenceChangeListener(this);
             findPreference(LeanSettings.DATE_FORMAT).setOnPreferenceChangeListener(this);
+            findPreference(LeanSettings.ICON_BADGE_COUNTER).setOnPreferenceChangeListener(this);
 
             findPreference(LeanSettings.RESET_APP_NAMES).setOnPreferenceClickListener(this);
             findPreference(LeanSettings.RESET_APP_VISIBILITY).setOnPreferenceClickListener(this);
@@ -203,6 +204,13 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
                 case LeanSettings.ICON_TEXT_SIZE:
                     if (preference instanceof ListPreference) {
                         ((ListPreference) preference).setValue((String) newValue);
+                    }
+                    LeanSettings.setLeanSettingsDirty(mContext);
+                    break;
+
+                case LeanSettings.ICON_BADGE_COUNTER:
+                    if (preference instanceof TwoStatePreference) {
+                        ((TwoStatePreference) preference).setChecked((boolean) newValue);
                     }
                     LeanSettings.setLeanSettingsDirty(mContext);
                     break;
