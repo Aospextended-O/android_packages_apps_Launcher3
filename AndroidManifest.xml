@@ -128,24 +128,24 @@
         </activity>
 
         <activity
-            android:name="com.google.android.apps.nexuslauncher.HideAppsActivity"
+            android:name="com.hdeva.launcher.HideAppsActivity"
             android:autoRemoveFromRecents="true"
             android:label="@string/hide_apps_title"
             android:theme="@android:style/Theme.DeviceDefault.Settings" />
 
         <activity
-            android:name="com.google.android.apps.nexuslauncher.IconPackListActivity"
+            android:name="com.hdeva.launcher.IconPackListActivity"
             android:autoRemoveFromRecents="true"
             android:label="@string/available_icon_packs"
             android:theme="@android:style/Theme.DeviceDefault.Settings" />
 
         <activity
-            android:name="com.google.android.apps.nexuslauncher.IconPickerActivity"
+            android:name="com.hdeva.launcher.IconPickerActivity"
             android:autoRemoveFromRecents="true"
             android:theme="@android:style/Theme.DeviceDefault.Settings" />
 
         <activity
-            android:name="com.google.android.apps.nexuslauncher.LeanTimeoutActivity"
+            android:name="com.hdeva.launcher.LeanTimeoutActivity"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait"
             android:theme="@style/TimeoutTheme" />
@@ -193,7 +193,7 @@
             android:name="com.google.android.apps.nexuslauncher.search.AppSearchProvider" />
 
         <receiver
-            android:name="com.google.android.apps.nexuslauncher.LeanDeviceAdmin"
+            android:name="com.hdeva.launcher.LeanDeviceAdmin"
             android:permission="android.permission.BIND_DEVICE_ADMIN">
             <meta-data
                 android:name="android.app.device_admin"
